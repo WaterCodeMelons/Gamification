@@ -37,6 +37,12 @@ namespace Gamification.API
                     Description = "API for student's project"
                 });
             });
+
+            services.AddCors(opt => opt.AddPolicy("FreePolicy",
+                builder => builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+                    .AllowAnyOrigin()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +61,10 @@ namespace Gamification.API
             app.UseMvc();
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+            app.UseSwaggerUI(c => 
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
+
+            app.UseCors("FreePolicy");
         }
     }
 }
