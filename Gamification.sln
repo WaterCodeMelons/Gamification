@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamification.API", "src\Gamification.API\Gamification.API.csproj", "{AEFFC369-7E68-4AC1-99DB-BDC22CEE00BA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E8A689DC-883D-49B6-A76D-7876928F92CC} = {E8A689DC-883D-49B6-A76D-7876928F92CC}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamification.Infrastructure", "src\Gamification.Infrastructure\Gamification.Infrastructure.csproj", "{E8A689DC-883D-49B6-A76D-7876928F92CC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{54B42746-4428-4222-BE9C-67538712AB00} = {54B42746-4428-4222-BE9C-67538712AB00}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamification.Domain", "src\Gamification.Domain\Gamification.Domain.csproj", "{54B42746-4428-4222-BE9C-67538712AB00}"
 EndProject
