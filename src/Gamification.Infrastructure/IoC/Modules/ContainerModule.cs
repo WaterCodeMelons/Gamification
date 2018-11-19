@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
+﻿using Autofac;
 using Microsoft.Extensions.Configuration;
 
 namespace Gamification.Infrastructure.IoC.Modules
 {
-    public class ContainerModule : Autofac.Module
+    public class ContainerModule : Module
     {
         private IConfiguration configuration;
 
