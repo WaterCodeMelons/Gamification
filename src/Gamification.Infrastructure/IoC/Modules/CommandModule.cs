@@ -1,11 +1,10 @@
 ﻿using System.Reflection;
 using Autofac;
 using Gamification.Infrastructure.Commands;
-using Module = Autofac.Module;
 
 namespace Gamification.Infrastructure.IoC.Modules
 {
-    public class CommandModule : Module
+    public class CommandModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)
         {

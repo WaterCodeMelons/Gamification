@@ -3,13 +3,13 @@ using Microsoft.Extensions.Configuration;
 
 namespace Gamification.Infrastructure.IoC.Modules
 {
-    public class ContainerModule : Module
+    public class ContainerModule : Autofac.Module
     {
-        private IConfiguration configuration;
+        private IConfiguration _configuration;
 
         public ContainerModule(IConfiguration configuration)
         {
-            this.configuration = configuration;
+            _configuration = configuration;
         }
 
         protected override void Load(ContainerBuilder builder)
