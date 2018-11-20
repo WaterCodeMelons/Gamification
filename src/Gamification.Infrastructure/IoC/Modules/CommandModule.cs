@@ -12,8 +12,8 @@ namespace Gamification.Infrastructure.IoC.Modules
                 .GetTypeInfo()
                 .Assembly;
 
-            builder.RegisterType<ICommandDispatcher>()
-                .As<CommandDispatcher>()
+            builder.RegisterType<CommandDispatcher>()
+                .As<ICommandDispatcher>()
                 .InstancePerLifetimeScope();
 
             builder.RegisterAssemblyTypes(assembly)

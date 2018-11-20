@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Microsoft.Extensions.Configuration;
 
+
 namespace Gamification.Infrastructure.IoC.Modules
 {
     public class ContainerModule : Autofac.Module
