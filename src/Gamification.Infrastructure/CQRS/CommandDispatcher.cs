@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Autofac;
 
-namespace Gamification.Infrastructure.Commands
+namespace Gamification.Infrastructure.CQRS
 {
     public class CommandDispatcher : ICommandDispatcher
     {

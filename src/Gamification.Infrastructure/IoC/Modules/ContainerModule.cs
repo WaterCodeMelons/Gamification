@@ -6,7 +6,7 @@ namespace Gamification.Infrastructure.IoC.Modules
 {
     public class ContainerModule : Autofac.Module
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public ContainerModule(IConfiguration configuration)
         {
@@ -15,7 +15,7 @@ namespace Gamification.Infrastructure.IoC.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterModule<CommandModule>();
+            builder.RegisterModule<CQRSModule>();
         }
     }
 }
