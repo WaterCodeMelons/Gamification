@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Autofac;
+using Gamification.Infrastructure.CQRS.Abstract;
 
 namespace Gamification.Infrastructure.CQRS
 {
@@ -13,14 +13,16 @@ namespace Gamification.Infrastructure.CQRS
             _context = context;
         }
 
-        public async Task DispatchAsync<T>(T query) where T : IQuery
+        public async Task<TResult> DispatchAsync<TResult>(IQuery<TResult> query)
         {
-            if (query == null)
-                throw new ArgumentException(nameof(query),
-                    $"Command: {typeof(T).Name} can not be null.");
+            {
+                var handlerType = typeof(IQueryHandler<,>)
+                    .MakeGenericType(query.GetType(), typeof(TResult));
 
-            var handler = _context.Resolve<IQueryHandler<T>>();
-            await handler.HandleAsync(query);
+                dynamic handler = _context.Resolve(handlerType);
+
+                return await handler.HandleAsync((dynamic)query);
+            }
         }
     }
 }

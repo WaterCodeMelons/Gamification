@@ -16,6 +16,7 @@ namespace Gamification.Infrastructure.IoC.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule<CQRSModule>();
+            builder.RegisterModule<ServiceModule>();
         }
     }
 }

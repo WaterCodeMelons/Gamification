@@ -5,6 +5,6 @@ namespace Gamification.Infrastructure.CQRS
 {
     public interface IQueryDispatcher
     {
-        Task DispatchAsync<T>(T query) where T : IQuery;
+        Task<TResult> DispatchAsync<TResult>(IQuery<TResult> query);
     }
 }

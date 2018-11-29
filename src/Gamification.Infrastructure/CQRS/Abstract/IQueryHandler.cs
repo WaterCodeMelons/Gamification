@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 
-namespace Gamification.Infrastructure.CQRS
+namespace Gamification.Infrastructure.CQRS.Abstract
 {
-    public interface IQueryHandler<T> where T: IQuery
+    public interface IQueryHandler<TQuery, TResult> where TQuery: IQuery<TResult>
     {
-        Task HandleAsync(T query);
+        Task<TResult> HandleAsync(TQuery query);
     }
 }

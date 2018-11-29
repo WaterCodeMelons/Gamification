@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
 using Gamification.Infrastructure.CQRS;
+using Gamification.Infrastructure.CQRS.Abstract;
 
 namespace Gamification.Infrastructure.IoC.Modules
 {
@@ -25,7 +26,7 @@ namespace Gamification.Infrastructure.IoC.Modules
                 .InstancePerLifetimeScope();
 
             builder.RegisterAssemblyTypes(assembly)
-                .AsClosedTypesOf(typeof(IQueryHandler<>))
+                .AsClosedTypesOf(typeof(IQueryHandler<,>))
                 .InstancePerLifetimeScope();
         }
     }
