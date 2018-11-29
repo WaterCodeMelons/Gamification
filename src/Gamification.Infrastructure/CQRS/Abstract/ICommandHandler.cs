@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Gamification.Infrastructure.Commands
+namespace Gamification.Infrastructure.CQRS
 {
     public interface ICommandHandler<T> where T : ICommand
     {

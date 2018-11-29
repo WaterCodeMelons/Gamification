@@ -1,4 +1,4 @@
-﻿using Gamification.Infrastructure.Commands;
+﻿using Gamification.Infrastructure.CQRS;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +10,12 @@ namespace Gamification.API.Controllers
     public abstract class ApiBaseController : Controller
     {
         protected ICommandDispatcher CommandDispatcher;
+        protected IQueryDispatcher QueryDispatcher;
 
-        protected ApiBaseController(ICommandDispatcher commandDispatcher)
+        protected ApiBaseController(ICommandDispatcher commandDispatcher, IQueryDispatcher queryDispatcher)
         {
             CommandDispatcher = commandDispatcher;
+            QueryDispatcher = queryDispatcher;
         }
     }
 }
